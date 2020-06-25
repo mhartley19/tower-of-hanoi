@@ -1,0 +1,62 @@
+:root {
+    box-sizing:border-box;
+    
+}
+
+#selectedPiece{
+    height: 120px;
+    width: 400px;
+    margin-left: 35%;
+    background-color: lemonchiffon;
+}
+
+#gameboard{
+    display: flex;
+    background-color: lightgray;
+}
+
+.tower{
+    border: 1px dashed black;
+    border-bottom: 10px solid black;
+    height: 400px;
+    width: 473px;
+    display:flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.rod{
+    width:10px;
+    height: 325px;
+    background-color: black;
+}
+
+.pieces{
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 30%;
+    align-items: flex-end;
+}
+
+#piece1{
+    width:60%;
+    background-color: red;
+}
+#piece2{
+    width:70%;
+    background-color: yellow;
+}
+#piece3{
+    width:80%;
+    background-color: blue;
+}
+#piece4{
+    width: 90%;
+    background-color: green;
+}
+
+.bottomOfTower{
+    width: 95%;
+    background-color: black;
+    height: 2px;
+}
