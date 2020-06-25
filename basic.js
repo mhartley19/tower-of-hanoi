@@ -21,36 +21,46 @@ endTower.addEventListener("click", tower)
 
 
 
-function tower(event){
 
-  let selectedTower = event.currentTarget
+// function tower(event){
 
-  if (mode === "pickup"){
-    let disc = selectedTower.lastElementChild
-    console.log(disc)
-    selectedPiece.append(disc)
-    mode = "dropped"
+//   let selectedTower = event.currentTarget
+
+//   console.log(selectedTower)
+//   if (mode === "pickup"){
+//     let disc = selectedTower.lastElementChild
+//     selectedPiece.append(disc)
+//     mode = "dropped"
     
-  }
-  // if(mode === "dropped" && 
-    // selectedPiece.lastElementChild.clientWidth < 400
-    // || selectedPiece.lastElementChild < selectedTower.lastElementChild.clientWidth)
-    // {alert ("Wrong Move")}
+    
+//   }
+//   else if(mode==="dropped"){
+    
+//     let disc = selectedPiece.firstElementChild
+//     selectedTower.append(disc)
+//     console.log(selectedTower)
+//     mode = "pickup"
 
-    else{mode === "dropped"
-     
-     let newTower = selectedPiece.firstElementChild
-      selectedTower.append(newTower)
-      console.log(selectedTower)
-      mode = "pickup"
-    }
+//   }
+//     else if(mode === "dropped"){
+  
+//      let newTower = selectedPiece.firstElementChild
+//       selectedTower.append(newTower)
+//       console.log(selectedTower)
+//       mode = "pickup"
+//     }
 
   
-}
+    
+//   }
+
 
 
   
 
+
+
+  
 
 
 button.addEventListener("click", winorlose)
@@ -66,3 +76,29 @@ function winorlose(){
   }
 
 
+ function tower(event){
+   let selectedTower = event.currentTarget
+   if(mode === 'pickup'){
+     let disc = selectedTower.lastElementChild
+     if(disc){
+      selectedPiece = disc
+      document.getElementById('selectedPiece').append(selectedPiece)
+      mode = "dropped"
+     } else {
+       console.log("empty") //Without this gaurd clause I kept running into issues so I am guessing its going to be required
+     }
+
+   } else if(mode === "dropped"){
+    if(event.currentTarget.childElementCount === 0){
+      selectedTower.append(selectedPiece)
+      mode = "pickup" //if the tower is empty the disc is dropped and swithces to "pickup"
+    } else if (selectedPiece.dataset.width < event.currentTarget.lastElementChild.dataset.width){
+      selectedTower.append(selectedPiece)
+      mode = "pickup" //if the first if statement fails it going to this else if and if disc is smaller is appends disc and mode become "pickup"
+    } else {
+      alert('wrong-move') //or can be a simple console.log so that if none of the above conditions work than theres no appending of disc
+      
+    }
+   }
+ }
+      
