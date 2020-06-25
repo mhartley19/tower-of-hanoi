@@ -8,6 +8,7 @@
     width: 400px;
     margin-left: 35%;
     background-color: lemonchiffon;
+    align-items:center;
 }
 
 #gameboard{
@@ -60,3 +61,4 @@
     background-color: black;
     height: 2px;
 }
+

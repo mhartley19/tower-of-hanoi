@@ -1,3 +1,7 @@
+
+
+
+
 let piece4 = document.querySelector("#piece4")
 let piece3 = document.querySelector("#piece3")
 let piece2 = document.querySelector("#piece2")
@@ -18,49 +22,8 @@ let mode = "pickup"
 firstTower.addEventListener("click", tower)
 middleTower.addEventListener("click", tower)
 endTower.addEventListener("click", tower)
-
-
-
-
-// function tower(event){
-
-//   let selectedTower = event.currentTarget
-
-//   console.log(selectedTower)
-//   if (mode === "pickup"){
-//     let disc = selectedTower.lastElementChild
-//     selectedPiece.append(disc)
-//     mode = "dropped"
-    
-    
-//   }
-//   else if(mode==="dropped"){
-    
-//     let disc = selectedPiece.firstElementChild
-//     selectedTower.append(disc)
-//     console.log(selectedTower)
-//     mode = "pickup"
-
-//   }
-//     else if(mode === "dropped"){
-  
-//      let newTower = selectedPiece.firstElementChild
-//       selectedTower.append(newTower)
-//       console.log(selectedTower)
-//       mode = "pickup"
-//     }
-
-  
-    
-//   }
-
-
-
   
 
-
-
-  
 
 
 button.addEventListener("click", winorlose)
@@ -71,7 +34,7 @@ function winorlose(){
     }
   
     else {
-      alert("No Keep Trying")
+      alert("No Keep Trying!")
     }
   }
 
@@ -96,7 +59,7 @@ function winorlose(){
       selectedTower.append(selectedPiece)
       mode = "pickup" //if the first if statement fails it going to this else if and if disc is smaller is appends disc and mode become "pickup"
     } else {
-      alert('wrong-move') //or can be a simple console.log so that if none of the above conditions work than theres no appending of disc
+      alert('Sorry, Not a Legal Move!') //or can be a simple console.log so that if none of the above conditions work than theres no appending of disc
       
     }
    }
